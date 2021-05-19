@@ -54,7 +54,7 @@
                         <th><?php echo $pecah['total_harga']; ?></th>
                         <th>
                             <button class="hapus">
-                                <a href="" class="btn-danger btn">hapus</a>
+                                <a href="hapus.php?nama_pelanggan=<?php echo $pecah['nama_pelanggan']; ?>" class="btn-danger btn">hapus</a>
                             </button>
                         </th>
                     </tr>

@@ -36,7 +36,7 @@
                     <legend id="forgot-pass">Forgot password?</legend>
                 </a>
                 <input id="submit-btn" type="submit" name="btn-register"/>
-                <a href="#" id="signup">Don't have account yet?</a>
+                <a href="login.php" id="signup">Already Have an Account?</a>
             </form>
         </div>
     </div>

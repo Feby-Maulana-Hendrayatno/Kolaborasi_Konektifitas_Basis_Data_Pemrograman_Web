@@ -24,7 +24,7 @@
                 <input class="form-content" type="text" name="username" />
                 <div class="form-border"></div>
                 <label for="user-email" style="padding-top:13px">&nbsp;Email</label>
-                <input class="form-content" type="email" name="email" autocomplete="on" required />
+                <input class="form-content" type="email" name="email"/>
                 <div class="form-border"></div>
                 <label for="user-password" style="padding-top:22px">&nbsp;Password</label>
                 <input class="form-content" type="password" name="password"/>
@@ -50,10 +50,15 @@
             $password = mysqli_real_escape_string($con,  $_POST['password']);
             $confirm_password = mysqli_real_escape_string($con,  $_POST['confirm_password']);
             
+            if ($username == ""  && $confirm_password=="" && $password == "" && $confirm_password=="") {
+                echo "<script>alert('Maaf, Data Tidak Boleh Kosong');</script>";
+                echo "<script>window.location.replace('register.php')</script>";
+            }
+
             $result = $con->query("SELECT username FROM tb_login WHERE username = '$username'");
 
             if (mysqli_fetch_assoc($result) > 0) {
-                echo "<script>alert('Username Telah Terdaftar');</script>";
+                echo "<>alert('Username Telah Terdaftar');</>";
             }
 
         if ($password !== $confirm_password) {

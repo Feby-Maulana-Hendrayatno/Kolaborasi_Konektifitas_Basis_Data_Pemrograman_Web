@@ -3,7 +3,7 @@ a {
 }
 
 body {
-    background: -webkit-linear-gradient(bottom, #2dbd6e, #a6f77b);
+    background: -webkit-linear-gradient(bottom, #5bd64b, #a6f77b);
     background-repeat: no-repeat;
 }
 
@@ -13,7 +13,7 @@ label {
 }
 
 #forgot-pass {
-    color: #2dbd6e;
+    color: #60d6d0;
     font-family: "Raleway", sans-serif;
     font-size: 10pt;
     margin-top: 3px;
@@ -24,9 +24,9 @@ label {
     background: #fbfbfb;
     border-radius: 8px;
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.65);
-    height: 520px;
+    height: 410px;
     margin: 6rem auto 8.1rem auto;
-    width: 320px;
+    width: 329px;
 }
 
 #card-content {
@@ -36,7 +36,7 @@ label {
 #card-title {
     font-family: "Raleway Thin", sans-serif;
     letter-spacing: 4px;
-    padding-bottom: 25px;
+    padding-bottom: 23px;
     padding-top: 13px;
     text-align: center;
 }
@@ -57,9 +57,9 @@ label {
     cursor: pointer;
     color: white;
     font-family: "Raleway SemiBold", sans-serif;
-    height: 42px;
+    height: 42.3px;
     margin: 0 auto;
-    margin-top: 30px;
+    margin-top: 50px;
     transition: 0.25s;
     width: 153px;
 }
@@ -87,9 +87,9 @@ label {
     padding-top: 14px;
 }
 
-.underline-title {
+.underline-title .buton {
     background: -webkit-linear-gradient(right, #a6f77b, #2ec06f);
     height: 2px;
     margin: -1.1rem auto 0 auto;
-    width: 160px;
+    width: 89px;
 }

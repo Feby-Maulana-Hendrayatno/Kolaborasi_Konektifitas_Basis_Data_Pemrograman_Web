@@ -1,0 +1,106 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+  width: 70px;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+}
+
+button a {
+  text-decoration: none;
+  color: red;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  text-align: center;
+}
+
+tr {
+  background: #ffffff;
+  color: black;
+  font-weight: 500;
+}
+
+th {
+  background: #09012f;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+td,
+th {
+  padding: 10px;
+  border: 1px solid #5d5d5d;
+  text-align: center;
+  font-size: 18px;
+}
+
+.btn_edit {
+  background: lime;
+  display: inline-block;
+  width: 80px;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+}
+.btn_edit:hover {
+  background: #05ce00;
+}
+
+.btn_delete {
+  background: red;
+  display: inline-block;
+  width: 80px;
+  padding: 5px;
+  text-decoration: none;
+  color: white;
+  text-align: center;
+  font-weight: 600;
+}
+.btn_delete:hover {
+  background: #a40004;
+}
+
+.tabel tr {
+  background: #ffffff;
+  color: black;
+  font-weight: 500;
+}
+
+.tabel th {
+  background: gray;
+  color: white;
+  font-weight: bold;
+}
+
+.tabel td,
+th {
+  padding: 10px;
+  border: 1px solid #5d5d5d;
+  text-align: left;
+  font-size: 18px;
+}
+
+.tabel table {
+  width: 20px;
+  border-collapse: collapse;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.btn {
+  background-color: red;
+  font-size: 100px;
+}

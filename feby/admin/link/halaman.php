@@ -8,8 +8,8 @@
 
 <?php
     switch ($page) {
-        case 'dashboard':
-            include 'page/dashboard.php';
+        case 'home':
+            include 'page/home.php';
             break;
 
         case 'kategori' :
@@ -18,22 +18,6 @@
 
         case 'produk':
             include 'page/produk/data_produk.php';
-            break;
-
-        case 'user':
-        include 'page/user.php';
-        break;
-
-        case 'login':
-            include 'page/login.php';
-            break;
-
-        case 'register':
-            include 'page/register.php';
-            break;
-
-        case 'logout':
-            include 'page/logout.php';
             break;
 
         default:

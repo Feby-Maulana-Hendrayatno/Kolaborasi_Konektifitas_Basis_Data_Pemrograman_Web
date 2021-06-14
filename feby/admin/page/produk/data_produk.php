@@ -1,67 +1,67 @@
-        <table class="tabel">
-            <input type="hidden" id="gambar_lama">
-            <input type="hidden" id="id_produk">
-            <tr>
-                <th>Nama Kategori</th>
-                <th>
-                    <select id="id_kategori">
-                        <option value="">- Pilih -</option>
-                    </select>
-                </th>
-            </tr>
-            <tr>
-                <th>Harga</th>
-                <th>
-                    <input type="number" id="harga">
-                </th>
-            </tr>
-            <tr>
-                <th>Deskripsi</th>
-                <th>
-                    <textarea id="deskripsi" rows="4"></textarea>
-                </th>
-            </tr>
-            <tr id="tampil_gambar" hidden>
-                <th>Gambar</th>
-                <th>
-                    <div id="gambar_tampil"></div>
-                </th>
-            </tr>
-            <tr?>
-            <th>Foto</th>
-            <th>
-                <input type="file" id="foto">
-            </th>
-        </tr?>
+<table class="tabel">
+    <input type="hidden" id="gambar_lama">
+    <input type="hidden" id="id_produk">
+    <tr>
+        <th>Nama Kategori</th>
+        <th>
+            <select id="id_kategori">
+                <option value="">- Pilih -</option>
+            </select>
+        </th>
+    </tr>
+    <tr>
+        <th>Harga</th>
+        <th>
+            <input type="number" id="harga">
+        </th>
+    </tr>
+    <tr>
+        <th>Deskripsi</th>
+        <th>
+            <textarea id="deskripsi" rows="4"></textarea>
+        </th>
+    </tr>
+    <tr id="tampil_gambar" hidden>
+        <th>Gambar</th>
+        <th>
+            <div id="gambar_tampil"></div>
+        </th>
+    </tr>
+    <tr?>
+    <th>Foto</th>
+    <th>
+        <input type="file" id="foto">
+    </th>
+</tr?>
+<tr>
+    <th style="background-color:white;">
+        <button id="btn" onclick="insert()" style="background-color: green; font-weight:bold; color:white;">
+            Tambah
+        </button>
+        <button id="btn_update" onclick="update()" hidden style="background-color: yellow; font-weight:bold; color:white;">
+            Update
+        </button>
+    </th>
+</tr>
+</table>
+
+<hr>
+
+<table id="data" border="1" cellpadding="10" cellspacing="0">
+    <thead>
         <tr>
-            <th>
-                <button id="btn" onclick="insert()" style="background-color: green;">
-                    Tambah
-                </button>
-                <button id="btn_update" onclick="update()" hidden>
-                    Update
-                </button>
-            </th>
+            <th>No</th>
+            <th>Nama Kategori </th>
+            <th>Harga</th>
+            <th>Foto</th>
+            <th>Deskripsi</th>
+            <th>Aksi</th>
         </tr>
-    </table>
+    </thead>
+    <tbody>
 
-    <hr>
-
-    <table id="data" border="1" cellpadding="10" cellspacing="0">
-        <thead>
-            <tr>
-                <th style="text-align: center;">No</th>
-                <th style="text-align: center;">Nama Kategori </th>
-                <th style="text-align: center;">Harga</th>
-                <th style="text-align: center;">Foto</th>
-                <th style="text-align: center;">Deskripsi</th>
-                <th style="text-align: center;">Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-    </table>
+    </tbody>
+</table>
 
 
     <script>
@@ -97,8 +97,8 @@
                             harga.innerHTML = val['harga'];
                             foto.innerHTML = '<img width="100" src="image/'+val['foto']+'">';
                             deskripsi.innerHTML = val['deskripsi'];
-                            aksi_cell.innerHTML = '<button onclick="edit('+ val['id'] +')" id="btn_edit">Edit</button> &bull; <button onclick="hapus('+ val['id'] +')">Hapus</button>'; 
-
+                            aksi_cell.innerHTML = '<button style="background-color: yellow; font-weight:bold; color: white;" onclick="edit('+ val['id'] +')" id="btn_edit" class="far fa-edit">Edit</button> &bull; <button style="background-color: red; color: white; font-weight:bold;" onclick="hapus('+ val['id'] +')"class="fas fa-trash-alt">Hapus</button>'; 
+                        
                         }
                     } 
 
@@ -165,74 +165,75 @@
             let deskripsi = document.getElementById("deskripsi");
             let gambar_lama = document.getElementById('gambar_lama');
             let tampil_gambar = document.getElementById("tampil_gambar");
-            let ambil_gambar = document.getElementById("ambil_gambar");
-//let label_gambar = document.getElementById("label_gambar");
-let btn = document.getElementById('btn');
-let btn_edit = document.getElementById('btn_edit');
-let btn_update = document.getElementById('btn_update');
+                    let ambil_gambar = document.getElementById("ambil_gambar");
+        let btn = document.getElementById('btn');
+        let btn_edit = document.getElementById('btn_edit');
+        let btn_update = document.getElementById('btn_update');
 
-btn.hidden = true;
-btn_update.hidden = false;
-let xhttp = new XMLHttpRequest();
-xhttp.open("GET", "http://localhost/feby/admin/page/produk/ajaxFile.php?request=4&id="+id, true);
-xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-        let response = JSON.parse(this.responseText);
-        for (let key in response) {
-            if (response.hasOwnProperty(key)) {
-                let val = response[key];
-                id_kategori.value = val['id_kategori'];
-                harga.value = val['harga'];
-                deskripsi.value = val['deskripsi'];
-                if (val['foto'] == "") {
-                    document.getElementById("gambar_tampil").value = '1';
-                } else {
-                    tampil_gambar.hidden = false;
-                    document.getElementById("gambar_lama").value = val['foto'];
-                    document.getElementById("gambar_tampil").innerHTML = '<img width="100" src="image/'+val['foto']+'">';
-                }
-                document.getElementById("id_produk").value = val['id'];
-            }
-        } 
-    }
-};
-xhttp.send();
-}
-
-function hapus(id) {
-    let xhttp = new XMLHttpRequest();
-    let konfirmasi = confirm(" Hapus  Pesanan?");
-
-    if (konfirmasi) {
-        xhttp.open("GET", "http://localhost/feby/admin/page/produk/ajaxFile.php?request=3&id="+id, true);
-
+        btn.hidden = true;
+        btn_update.hidden = false;
+        let xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "http://localhost/feby/admin/page/produk/ajaxFile.php?request=4&id="+id, true);
         xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
         xhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-
-                let response = this.responseText;
-                if(response == 1){
-                    alert("Delete successfully.");
-
-                    load();
-                }
-
+                let response = JSON.parse(this.responseText);
+                for (let key in response) {
+                    if (response.hasOwnProperty(key)) {
+                        let val = response[key];
+                        id_kategori.value = val['id_kategori'];
+                        harga.value = val['harga'];
+                        deskripsi.value = val['deskripsi'];
+                        if (val['foto'] == "") {
+                            document.getElementById("gambar_tampil").value = '1';
+                        } else {
+                            tampil_gambar.hidden = false;
+                            document.getElementById("gambar_lama").value = val['foto'];
+                            document.getElementById("gambar_tampil").innerHTML = '<img width="100" src="image/'+val['foto']+'">';
+                        }
+                        document.getElementById("id_produk").value = val['id'];
+                    }
+                } 
             }
         };
-
         xhttp.send();
-    }
-}
+        }
 
-function update() {
+        function hapus(id) {
+            let xhttp = new XMLHttpRequest();
+            let konfirmasi = confirm(" Hapus  Pesanan?");
+
+            if (konfirmasi) {
+                xhttp.open("GET", "http://localhost/feby/admin/page/produk/ajaxFile.php?request=3&id="+id, true);
+
+                xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+                xhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+
+                        let response = this.responseText;
+                        if(response == 1){
+                            alert("Delete successfully.");
+
+                            load();
+                        }
+
+                    }
+                };
+
+                xhttp.send();
+            }
+        }
+
+    function update() {
     let id_produk = document.getElementById('id_produk').value;
     let gambar_lama = document.getElementById('gambar_lama').value;
     let id_kategori = document.getElementById('id_kategori').value;
     let harga = document.getElementById('harga').value;
     let deskripsi = document.getElementById('deskripsi').value;
     let files = document.getElementById('foto').files;
+    let tampil_gambar = document.getElementById('tampil_gambar');
+
     if (files.length > 0) {
         let formData = new FormData();
         formData.append("foto", files[0]);
@@ -250,6 +251,13 @@ function update() {
                 if (response == 1) {
                     alert("Upload Sukses");
                     load();
+                    document.getElementById('id_produk').value = "";
+                    document.getElementById('gambar_lama').value = "";
+                    document.getElementById('id_kategori').value = "";
+                    document.getElementById('harga').value = "";
+                    document.getElementById('deskripsi').value = "";
+                    document.getElementById('foto').value = "";
+                    tampil_gambar.hidden = true;
                     btn.hidden = false;
                     btn_update.hidden = true;
                 } else {

@@ -18,11 +18,12 @@ if ($_SESSION['role'] != 1) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin</title>
+    <title>Dashboard Admin</title>
     <link rel="stylesheet" href="css/tabel.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.google.com/icons?selected=Material+Icons+Outlined:photo_camera&icon.query=delete>
 </head>
 
 <body>
@@ -38,9 +39,9 @@ if ($_SESSION['role'] != 1) {
 	<div class="sidebar">
         <center>
             <img src="image/angkringan.png" class="profile_admin">
-            <h2>Angkringan Family</h2>
+            <h2>Angkringan</h2>
         </center>
-        <a href="home.php">
+        <a href="?page=home">
         	<i class="fas fa-home"></i>
         	<span>Home</span>
         </a>
@@ -51,10 +52,6 @@ if ($_SESSION['role'] != 1) {
         <a href="?page=produk">
         	<i class="las la-receipt"></i> 
         	<span>Produk</span>
-        </a>
-        <a href="?page=users">
-        	<i class="fa fa-user"></i> 
-        	<span>Users</span>
         </a>
             <a href="../logout.php">
             <i class="la la-sign-out"></i> 

@@ -74,7 +74,6 @@ header {
   padding-left: 40px;
   box-sizing: border-box;
   transition: 0.5s;
-  transition-property: background;
   font-size: 23px;
 }
 

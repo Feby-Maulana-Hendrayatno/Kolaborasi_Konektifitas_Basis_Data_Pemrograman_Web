@@ -8,7 +8,7 @@ include '../config/config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Website</title>
+    <title>Angkringan Familly</title>
     <link rel="stylesheet" href="css/order.css">
 </head>
 <body>
@@ -51,11 +51,10 @@ include '../config/config.php';
             while ($data = mysqli_fetch_assoc($sql)) { ?>
                 <div class="foto">
                     <img src="../admin/image/<?php echo $data['foto'] ?>" style="height:300px;">
-                    <p> <?php echo $data['nama_kategori']; ?></p>
-                    <p style="font-size:28px; font-family: sans-serif, roboto,serif; color:gray;" >Harga <?php echo $data['harga']; ?></p>
-                    <a href="?page=kategori">
-                    <a href='produk_detail.php?produk=<?= $data['produk_id']; ?>'>Detail</a>
-                    <!-- <a href="beli.php?produk_id=<?= $data['produk_id']; ?>"> Beli </a> -->
+                    <p style="font-size:30px; font-weight: bold;"> <?php echo $data['nama_kategori']; ?></p>
+                    <p style="font-size:24px; font-family: sans-serif,serif; color:black;" ><?php echo $data['deskripsi']; ?></p>
+                    <p style="font-size:25px; color:gray; " >Harga <?php echo $data['harga']; ?></p>
+                    <a href=beli.php>Beli</a>
                 </div>
                 <?php
             }
@@ -65,9 +64,6 @@ include '../config/config.php';
         </div>
     </div>
     </div>
-    
-            <!-- Bagian Sosial Media -->
-
         </body>
 
         </html>

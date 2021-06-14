@@ -1,4 +1,4 @@
-<table>
+<table class="tabel">
     <input type="hidden" id="id_kategori">
     <tr>
         <th>Nama Kategori</th>
@@ -6,18 +6,17 @@
             <input type="text" id="nama_kategori">
         </th>
     </tr>
-
-            <button id="btn" onclick="insert()" style="background-color: green;">
-                Tambah
-            </button>
-            <button id="btn_update" onclick="update()" hidden style="background-color: yellow;">
-                Update
-            </button>
+        <button id="btn" onclick="insert()" style="background-color: green; font-weight:bold; color:white;">
+            Tambah
+        </button>
+        <button id="btn_update" onclick="update()" hidden style="background-color: yellow; font-weight:bold; color:white;">
+            Update
+        </button>
 </table>
 
 <hr>
 
-<table id="data" border="1" cellpadding="10" cellspacing="0">
+<table id="data" border="1" cellpadding="10" cellspacing="0" >
     <thead>
         <tr>
             <th>No</th>
@@ -57,7 +56,7 @@
 
                             nomer.innerHTML = val['nomer'];
                             nama_kategori_cell.innerHTML = val['nama_kategori'];
-                            aksi_cell.innerHTML = '<button onclick="edit('+ val['id_kategori'] +')" id="btn_edit">Edit</button> &bull; <button onclick="hapus('+ val['id_kategori'] +')">Hapus</button>'; 
+                            aksi_cell.innerHTML = '<button style="background-color: yellow; font-weight:bold; color:white;" onclick="edit('+ val['id_kategori'] +')" id="btn_edit" class="far fa-edit">Edit</button> &bull; <button style="background-color: red; font-weight:bold; color:white;" onclick="hapus('+ val['id_kategori'] +')" class="fas fa-trash-alt">Hapus</button>'; 
                             
                         }
                     } 

@@ -151,11 +151,11 @@ if ($request == 5) {
 
         $response = 0;
 
-        $query = $koneksi->query("UPDATE produk SET foto = '$namafilebaru' WHERE id = '$id_produk' ");
+        $query = $koneksi->query("UPDATE produk SET id_kategori = $id_kategori, harga = $harga, deskripsi = '$deskripsi', foto = '$namafilebaru' WHERE id = '$id_produk' ");
     } else {
         $response = 0;
 
-        $query = $koneksi->query("UPDATE produk SET harga = 5000 WHERE id = '$id_produk' ");
+        $query = $koneksi->query("UPDATE produk SET id_kategori = $id_kategori, harga = $harga, deskripsi = $deskripsi WHERE id = '$id_produk' ");
     }
 
     if ($query != 0) {

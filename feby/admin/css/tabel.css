@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+button {
+  cursor: pointer;
+  width: 70px;
+  border: none;
+  padding: 10px;
+  font-size: 15px;
+}
+
+button a {
+  text-decoration: none;
+  color: red;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: auto;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  text-align: center;
+}
+
+tr {
+  background: #ffffff;
+  color: black;
+  font-weight: 500;
+}
+
+th {
+  background: #00008b;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+
+.kategori {
+  padding: 12px;
+  border: 1px solid #5d5d5d;
+  text-align: center;
+  font-size: 22px;
+}
+
+td,
+th {
+  padding: 12px;
+  border: 1px solid #5d5d5d;
+  text-align: center;
+  font-size: 22px;
+}
+
+.tabel th {
+  background: gray;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}

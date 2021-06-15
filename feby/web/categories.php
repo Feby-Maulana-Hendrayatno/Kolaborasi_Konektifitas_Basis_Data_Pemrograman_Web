@@ -31,6 +31,11 @@ include '../config/config.php';
                     <li>
                         <a href="foods.php">Menu</a>
                     </li>
+                    <!-- <?php if ($_SESSION['login']) : ?>
+                        Logout
+                    <?php else : ?>
+                        Login
+                    <?php endif ?> -->
                     <li>
                         <a href="../login.php">Login |</a>
                         <a href="../logout.php" >| Logout <i class="la la-sign-out" aria-hidden="true"></i> </a>
@@ -54,7 +59,9 @@ include '../config/config.php';
                     <p style="font-size:30px; font-weight: bold;"> <?php echo $data['nama_kategori']; ?></p>
                     <p style="font-size:24px; font-family: sans-serif,serif; color:black;" ><?php echo $data['deskripsi']; ?></p>
                     <p style="font-size:25px; color:gray; " >Harga <?php echo $data['harga']; ?></p>
-                    <a href=beli.php>Beli</a>
+                    <a href="beli.php?id=<?php echo $data['id'] ?>">
+                        Beli
+                    </a>
                 </div>
                 <?php
             }
@@ -64,6 +71,5 @@ include '../config/config.php';
         </div>
     </div>
     </div>
-        </body>
-
-        </html>
+    </body>
+</html>

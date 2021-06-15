@@ -16,11 +16,13 @@
     <title>Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style-login.css" media="screen" title="no title">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 <body>
     <div id="card">
         <div id="card-content">
             <div id="card-title">
+            <i class="fas fa-sign-in"></i>
                 <h2>LOGIN</h2>
                 <div class="underline-title"></div>
             </div>

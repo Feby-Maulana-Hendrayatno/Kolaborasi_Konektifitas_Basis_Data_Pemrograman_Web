@@ -1,9 +1,13 @@
+<?php
+    session_start();
+    include '../config/config.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurant Website</title>
+    <title>Angkringan Familly</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
 </head>
@@ -11,11 +15,6 @@
     <!-- Bagian Navbar -->
     <section class="navbar">
         <div class="container">
-            <div class="logo">
-                <a href="#" title="Logo">
-                    <img src="images/logo angkringan1.jpg" alt="Restaurant Logo" class="img-responsive">
-                </a>
-            </div>
             <div class="menu text-right">
                 <ul>
                     <li>
@@ -27,7 +26,12 @@
                     <li>
                         <a href="foods.php">Menu</a>
                     </li>
-                    <li>
+                    <!-- <?php if ($_SESSION['login']) : ?>
+                        Logout
+                    <?php else : ?>
+                        Login
+                    <?php endif ?>
+                    <li> -->
                         <a href="../login.php">Login |</a>
                         <a href="../logout.php" >| Logout <i class="la la-sign-out" aria-hidden="true"></i> </a>
                     </li>

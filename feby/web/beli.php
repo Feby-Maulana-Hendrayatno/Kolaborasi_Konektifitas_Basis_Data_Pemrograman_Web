@@ -1,15 +1,15 @@
 <?php
 session_start();
 
-$id_kategori = $_GET['id'];
+$id = $_GET['id'];
 
-if(isset($_SESSION['keranjang'] [$id_kategori] )){
-    $_SESSION['keranjang'] [$id_kategori]+=1;
+if(isset($_SESSION['keranjang'][$id] )){
+    $_SESSION['keranjang'][$id]+=1;
 }else{
-    $_SESSION['keranjang'] [$id_kategori] =1;
+    $_SESSION['keranjang'][$id] =1;
 }
 
 
-echo "<script>alert('produk telah masuk ke keranjang');<script>";
-echo"<script>location='keranjang.php';<script>";
+echo "<script>alert('produk telah masuk ke keranjang');</script>";
+echo"<script>location='keranjang.php';</script>";
 ?>
